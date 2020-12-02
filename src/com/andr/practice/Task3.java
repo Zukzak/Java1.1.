@@ -11,7 +11,7 @@ public class Task3 {
         System.out.println();
         int c = num[0];
         int d = num[num.length-1];
-        int e = num[num.length%2+1];
+        int e = num[num.length/2];
 
         num[0] = num[4];
         num[4] = c;
