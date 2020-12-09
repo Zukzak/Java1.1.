@@ -13,10 +13,12 @@ public class Task4 {
         int z = in.nextInt();
         in.close();
 
-        int sred = (x+y+z)/3;
-        System.out.println("Среднее арифмитическое -" + sred);
+        double sred = (double) (x+y+z)/3;
 
-        int c = sred/2;
+        String result = String.format("%.2f", sred);
+        System.out.println("Среднее арифмитическое -" + result);
+
+        double c = sred/2;
 
         if (c>3) {
             System.out.println("Программа выполнена корректно");
