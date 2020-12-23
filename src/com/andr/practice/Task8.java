@@ -11,7 +11,7 @@ public class Task8 {
             System.out.println("Введите любое положительное число: ");
             n = input.nextInt();
         }
-        while  (n%2==1);
+        while  (n<0);
 
         for (int i = 0; i < n; i++) {
             if (i%2==1) sum = sum + i;
