@@ -1,31 +1,46 @@
 package com.andr.practice;
-import java.util.Random;
-
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int max = -21;
-        int min = 21;
-        Random random = new Random();
+        Scanner input = new Scanner(System.in);
+        String a;
+        int result = 0;
 
-        int[] m = new int[15];
+        System.out.println("Для решения уравнения введите строку \"a+(-)b=c\", с одним х и цифрами [0;9]:");
+            a = input.next();
 
-        for (int i=0; i<=m.length-1; i++) {
-            m[i] = random.nextInt(41) - 20;
-            if (max<=m[i]) max = m[i];
-            if (m[i]<=min) min = m[i];
+        if (a.charAt(0)=='x') {
+            int b1 = Integer.parseInt(String.valueOf(a.charAt(2)));
+            int c1 = Integer.parseInt(String.valueOf(a.charAt(4)));
+            if (a.charAt(1)=='+') {
+                result = c1 - b1;
+            } else {
+                result = c1 + b1;
+            }
         }
-        System.out.print ("Массив:");
-        for (int j : m) {
-            System.out.print(" " + j);
+
+        if (a.charAt(2)=='x') {
+            int a1 = Integer.parseInt(String.valueOf(a.charAt(0)));
+            int c1 = Integer.parseInt(String.valueOf(a.charAt(4)));
+            if (a.charAt(1)=='+') {
+                result = c1 - a1;
+            } else {
+                result = a1 - c1;
+            }
         }
-        System.out.print ("\n");
-        System.out.println("Максимальный элемент массива: " + max);
-        System.out.println("минимальныйальный элемент массива: " + min);
 
-        int resultMax = Math.max(Math.abs(max),Math.abs(min));
+        if (a.charAt(4)=='x') {
+            int b1 = Integer.parseInt(String.valueOf(a.charAt(2)));
+            int a1 = Integer.parseInt(String.valueOf(a.charAt(0)));
+            if (a.charAt(1)=='+') {
+                result = a1 + b1;
+            } else {
+                result = a1 - b1;
+            }
+        }
 
-        System.out.println("Наибольший по модулю элемент массива: " + resultMax);
+        System.out.println("\n Решение: х = " + result);
 
     }
 }
